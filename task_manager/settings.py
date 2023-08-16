@@ -16,6 +16,7 @@ import os
 from dotenv import load_dotenv
 from django.utils.translation import gettext_lazy as _
 
+
 load_dotenv()
 DATABASE_URL = os.getenv("DATABASE_URL")
 
@@ -50,6 +51,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django_bootstrap5",
     "task_manager",
 ]
 

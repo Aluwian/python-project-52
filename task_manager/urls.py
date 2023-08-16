@@ -17,10 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.conf.urls.i18n import i18n_patterns
 from django.urls import path
+from task_manager.views import HomePageView
 
-from task_manager import views
 
 urlpatterns = i18n_patterns(
-    path("", views.index),
+    path("", HomePageView.as_view(template_name="index.html")),
     path("admin/", admin.site.urls),
 )
