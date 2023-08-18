@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-15 14:03+0300\n"
+"POT-Creation-Date: 2023-08-17 16:38+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,42 +20,86 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: task_manager/settings.py:125
+#: task_manager/settings.py:128
 msgid "English"
 msgstr ""
 
-#: task_manager/settings.py:126
+#: task_manager/settings.py:129
 msgid "Russian"
 msgstr ""
 
-#: task_manager/templates/layout/base.html:8
-msgid "Task manager Hexlet"
-msgstr "Менеджер задач Hexlet"
-
-#: task_manager/templates/layout/base.html:19
-msgid "Task manager"
-msgstr "Менеджер задач"
-
-#: task_manager/templates/layout/base.html:26
-msgid "Users"
-msgstr "Пользователи"
-
-#: task_manager/templates/layout/base.html:31
-msgid "Login"
-msgstr "Вход"
-
-#: task_manager/templates/layout/base.html:34
-msgid "Registration"
-msgstr "Регистрация"
-
-#: task_manager/templates/layout/base.html:50
+#: task_manager/templates/index.html:14
 msgid "Greetings from Hexlet!"
 msgstr "Привет от Хекслета!"
 
-#: task_manager/templates/layout/base.html:51
+#: task_manager/templates/index.html:15
 msgid "Practical programming courses"
 msgstr "Практические курсы по программированию"
 
-#: task_manager/templates/layout/base.html:53
-msgid "To learn more"
+#: task_manager/templates/index.html:18
+#, fuzzy
+#| msgid "To learn more"
+msgid "Learn more"
 msgstr "Узнать больше"
+
+#: task_manager/templates/layout/base.html:13
+msgid "Task manager Hexlet"
+msgstr "Менеджер задач Hexlet"
+
+#: task_manager/templates/layout/base.html:20
+msgid "Task manager"
+msgstr "Менеджер задач"
+
+#: task_manager/templates/layout/base.html:30
+#: task_manager/templates/users/users_list.html:8
+msgid "Users"
+msgstr "Пользователи"
+
+#: task_manager/templates/layout/base.html:35
+msgid "Login"
+msgstr "Вход"
+
+#: task_manager/templates/layout/base.html:38
+#: task_manager/templates/users/create.html:7
+msgid "Registration"
+msgstr "Регистрация"
+
+#: task_manager/templates/users/create.html:11
+#: task_manager/templates/users/create.html:12
+msgid "Name"
+msgstr "Имя"
+
+#: task_manager/templates/users/create.html:14
+#: task_manager/templates/users/create.html:15
+msgid "Surname"
+msgstr "Фамилия"
+
+#: task_manager/templates/users/create.html:17
+#: task_manager/templates/users/create.html:23
+#: task_manager/templates/users/create.html:30
+#: task_manager/templates/users/users_list.html:13
+#, fuzzy
+#| msgid "Users"
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: task_manager/templates/users/create.html:27
+msgid "Password"
+msgstr "Пароль"
+
+#: task_manager/templates/users/create.html:35
+#: task_manager/templates/users/create.html:36
+msgid "Password confirmation"
+msgstr "Подтверждение пароля"
+
+#: task_manager/templates/users/users_list.html:12
+msgid "ID"
+msgstr "ID"
+
+#: task_manager/templates/users/users_list.html:14
+msgid "Full name"
+msgstr "Полное имя"
+
+#: task_manager/templates/users/users_list.html:15
+msgid "Creation date"
+msgstr "Дата создания"

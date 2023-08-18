@@ -22,3 +22,6 @@ start:
 
 migration:
 	poetry run python manage.py makemigrations
+
+translate:
+	django-admin makemessages -l ru

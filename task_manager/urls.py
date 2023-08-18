@@ -16,11 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf.urls.i18n import i18n_patterns
-from django.urls import path
+from django.urls import path, include
+
 from task_manager.views import HomePageView
 
 
 urlpatterns = i18n_patterns(
-    path("", HomePageView.as_view(template_name="index.html")),
+    path("", HomePageView.as_view(), name="Home"),
+    path("users/", include("task_manager.users.urls")),
     path("admin/", admin.site.urls),
 )

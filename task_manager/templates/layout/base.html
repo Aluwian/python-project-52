@@ -5,68 +5,56 @@
 
 <!doctype html>
 <html lang="{{ LANGUAGE_CODE }}">
-  <head>
+<head>
     <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <title>{% trans "Task manager Hexlet" %}</title>
     {% bootstrap_css %}
-  </head>
+</head>
 
-  <body class="d-flex flex-column min-vh-100">
-    <header class="flex-shrink-0">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand ms-3" href="/">{% trans "Task manager" %}</a>
+<body class="d-flex flex-column min-vh-100">
+<header class="flex-shrink-0">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand ms-3" href="{% url 'Home' %}">{% trans "Task manager" %}</a>
         <button
-          class="navbar-toggler"
-          data-toggle="collapse"
-          data-target="#navbarToggleExternalContent"
-        >make dev
-          <span class="navbar-toggler-icon"></span>
+                class="navbar-toggler"
+                data-toggle="collapse"
+                data-target="#navbarToggleExternalContent">
+        <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="/">{% trans "Users" %}</a>
-            </li>
-          </ul>
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="/">{% trans "Login" %}</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/">{% trans "Registration" %}</a>
-            </li>
-          </ul>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'UsersList' %}">{% trans "Users" %}</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">{% trans "Login" %}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">{% trans "Registration" %}</a>
+                </li>
+            </ul>
         </div>
-      </nav>
-    </header>
+    </nav>
+</header>
 
-    <main class="flex-grow-1">
-      {% block main %}
-      <div class="container wrapper flex-grow-1">
-        <h1 class="my-4"></h1>
-        <h1 class="my-4"></h1>
-        <div class="card">
-          <div class="card-body p-5 bg-light">
-            <div class="display-4">{% trans "Greetings from Hexlet!" %}</div>
-            <p class="lead">{% trans "Practical programming courses" %}</p>
-            <hr />
-            <a class="btn btn-primary btn-lg" href="https://ru.hexlet.io"
-              >{% trans "Learn more" %}</a
-            >
-          </div>
-        </div>
-      </div>
-      {% endblock main %}
-    </main>
+<main class="flex-grow-1">
+    <div class="container wrapper flex-grow-1">
+        {% block main %}
+            
+        {% endblock main %}
+    </div>
+</main>
 
-    <footer class="container py-3 mt-5 flex-shrink-0 border-top">
-      <div class="text-center">
+<footer class="container py-3 mt-5 flex-shrink-0 border-top">
+    <div class="text-center">
         <a target="_blank" href="https://ru.hexlet.io">Hexlet</a>
-      </div>
-    </footer>
-    {% bootstrap_javascript %}
-  </body>
+    </div>
+</footer>
+{% bootstrap_javascript %}
+</body>
 </html>
