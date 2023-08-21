@@ -16,7 +16,6 @@ import os
 from dotenv import load_dotenv
 from django.utils.translation import gettext_lazy as _
 
-
 load_dotenv()
 DATABASE_URL = os.getenv("DATABASE_URL")
 
@@ -38,7 +37,7 @@ ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
     "webserver",
-    ".onrender.com",
+    "render.com",
 ]
 
 
@@ -118,6 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = "users.User"
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/

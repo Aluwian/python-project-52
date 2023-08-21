@@ -20,8 +20,15 @@ PORT ?= 8000
 start:
 	poetry run gunicorn -w 5 -b 0.0.0.0:$(PORT) task_manager.wsgi:application
 
-migration:
-	poetry run python manage.py makemigrations
-
 translate:
 	django-admin makemessages -l ru
+
+trans-complete:
+	django-admin compilemessages
+
+migration:
+	poetry run python manage.py makemigrations
+	poetry run python manage.py migrate
+
+shell:
+	python manage.py shell

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-17 16:38+0300\n"
+"POT-Creation-Date: 2023-08-18 14:39+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,15 +28,15 @@ msgstr ""
 msgid "Russian"
 msgstr ""
 
-#: task_manager/templates/index.html:14
+#: task_manager/templates/index.html:12
 msgid "Greetings from Hexlet!"
 msgstr "Привет от Хекслета!"
 
-#: task_manager/templates/index.html:15
+#: task_manager/templates/index.html:13
 msgid "Practical programming courses"
 msgstr "Практические курсы по программированию"
 
-#: task_manager/templates/index.html:18
+#: task_manager/templates/index.html:16
 #, fuzzy
 #| msgid "To learn more"
 msgid "Learn more"
@@ -51,7 +51,7 @@ msgid "Task manager"
 msgstr "Менеджер задач"
 
 #: task_manager/templates/layout/base.html:30
-#: task_manager/templates/users/users_list.html:8
+#: task_manager/templates/users/users_list.html:7
 msgid "Users"
 msgstr "Пользователи"
 
@@ -77,7 +77,7 @@ msgstr "Фамилия"
 #: task_manager/templates/users/create.html:17
 #: task_manager/templates/users/create.html:23
 #: task_manager/templates/users/create.html:30
-#: task_manager/templates/users/users_list.html:13
+#: task_manager/templates/users/users_list.html:12
 #, fuzzy
 #| msgid "Users"
 msgid "Username"
@@ -92,14 +92,22 @@ msgstr "Пароль"
 msgid "Password confirmation"
 msgstr "Подтверждение пароля"
 
-#: task_manager/templates/users/users_list.html:12
+#: task_manager/templates/users/users_list.html:11
 msgid "ID"
 msgstr "ID"
 
-#: task_manager/templates/users/users_list.html:14
+#: task_manager/templates/users/users_list.html:13
 msgid "Full name"
 msgstr "Полное имя"
 
-#: task_manager/templates/users/users_list.html:15
+#: task_manager/templates/users/users_list.html:14
 msgid "Creation date"
 msgstr "Дата создания"
+
+#: task_manager/templates/users/users_list.html:26
+msgid "Change"
+msgstr ""
+
+#: task_manager/templates/users/users_list.html:27
+msgid "Изменить"
+msgstr "Удалить"

@@ -1,11 +1,15 @@
-from django.views.generic.base import TemplateView
-from django.contrib.auth.models import User
+from django.views.generic.list import ListView
+from django.views.generic.edit import CreateView
+from .models import User
+from .form import CreateUserForm
 
 
-class UsersListView(TemplateView):
+class UsersListView(ListView):
     template_name = "users/users_list.html"
-    users = User.objects.all()
+    model = User
+    context_object_name = "users"
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        return context
+
+class CreateUserView(CreateView):
+    form_class = CreateUserForm
+    template_name = "users/create.html"
