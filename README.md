@@ -6,3 +6,5 @@
 
 ### About
 Task Manager is a task management system similar to http://www.redmine.org/. It allows you to set tasks, assign performers and change their statuses. Registration and authentication is required to work with the system.
+
+### [Try the app](https://task-manager-fl6b.onrender.com/)
