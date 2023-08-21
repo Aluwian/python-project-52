@@ -37,7 +37,7 @@ ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
     "webserver",
-    "onrender.com",
+    "task-manager-fl6b.onrender.com",
 ]
 
 

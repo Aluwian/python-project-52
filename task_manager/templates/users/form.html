@@ -5,9 +5,14 @@
 {% load django_bootstrap5 %}
 
 {% block main %}
-<h1 class="my-4">{% trans "Registration" %}</h1>
+<h1 class="my-4">{% trans title %}</h1>
+    {% if messages %}
+        {% bootstrap_messages %}
+    {% endif %}
     <form method="post">
+    {% csrf_token %}
         {% bootstrap_form form %}
+    {% bootstrap_button button_text button_type="submit" %}
     </form>
 
 {% endblock main %}

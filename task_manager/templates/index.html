@@ -2,9 +2,12 @@
 
 {% extends "layout/base.html" %}
 {% load i18n %}
+{% load django_bootstrap5 %}
 
 {% block main %}
-
+    {% if messages %}
+    {% bootstrap_messages %}
+    {% endif %}
 <h1 class="my-4"></h1>
 <h1 class="my-4"></h1>
 <div class="card">
