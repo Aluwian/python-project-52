@@ -1,9 +1,11 @@
 from django.urls import reverse_lazy
 from django.views.generic.list import ListView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.contrib.messages.views import SuccessMessageMixin
+from task_manager.helpers import CustomLoginRequiresMixin, CustomPermissionRequiredMixin
 from .models import User
 from .form import CreateUserForm
+from django.utils.translation import gettext_lazy as _
 
 
 class UsersListView(ListView):
@@ -17,7 +19,21 @@ class UsersListView(ListView):
 
 class CreateUserView(SuccessMessageMixin, CreateView):
     form_class = CreateUserForm
-    template_name = "users/form.html"
-    success_message = "User successfully registered"
-    success_url = reverse_lazy("Home")
-    extra_context = {"title": "Registration", "button_text": "Registration"}
+    template_name = "layout/form.html"
+    success_message = _("User successfully registered")
+    success_url = reverse_lazy("Login")
+    extra_context = {"title": _("Registration"), "button_text": _("Registrate")}
+
+
+class UpdateUserView(
+    CustomLoginRequiresMixin,
+    CustomPermissionRequiredMixin,
+    SuccessMessageMixin,
+    UpdateView,
+):
+    model = User
+    form_class = CreateUserForm
+    template_name = "layout/form.html"
+    success_url = reverse_lazy("UsersList")
+    success_message = _("User updated successfully")
+    extra_context = {"title": _("User change"), "button_text": _("Update")}

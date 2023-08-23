@@ -2,32 +2,38 @@
 
 {% extends "layout/base.html" %}
 {% load i18n %}
+{% load django_bootstrap5 %}
 
 {% block main %}
-  <h1 class="my-4">{% trans "Users" %}</h1>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>{% trans "ID" %}</th>
-        <th>{% trans "Username" %}</th>
-        <th>{% trans "Full name" %}</th>
-        <th>{% trans "Creation date" %}</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
+    {% if messages %}
+    {% bootstrap_messages %}
+    {% endif %}
+<h1 class="my-4">{% trans "Users" %}</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>{% trans "ID" %}</th>
+      <th>{% trans "Username" %}</th>
+      <th>{% trans "Full name" %}</th>
+      <th>{% trans "Creation date" %}</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
     {% for user in users %}
-      <tr>
-        <td>{{ user.pk }}</td>
-        <td>{{ user.username }}</td>
-        <td>{{ user.first_name }} {{ user.last_name }}</td>
-        <td>{{ user.date_joined|date:"d.m.Y H:i" }}</td>
-        <td>
-            <div><a href="/">{% trans "Change" %}</a></div>
-            <div><a href="/">{% trans "Delete" %}</a></div>
-        </td>
-      </tr>
+    <tr>
+      <td>{{ user.pk }}</td>
+      <td>{{ user.username }}</td>
+      <td>{{ user.first_name }} {{ user.last_name }}</td>
+      <td>{{ user.date_joined|date:"d.m.Y H:i" }}</td>
+      <td>
+        <div>
+          <a href="{% url 'UpdateUser' user.id %}">{% trans "Update" %}</a>
+        </div>
+        <div><a href="/">{% trans "Delete" %}</a></div>
+      </td>
+    </tr>
     {% endfor %}
-    </tbody>
-  </table>
+  </tbody>
+</table>
 {% endblock main %}

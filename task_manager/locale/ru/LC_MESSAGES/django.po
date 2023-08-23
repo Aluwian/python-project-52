@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-18 14:39+0300\n"
+"POT-Creation-Date: 2023-08-23 15:41+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,15 +28,15 @@ msgstr ""
 msgid "Russian"
 msgstr ""
 
-#: task_manager/templates/index.html:12
+#: task_manager/templates/index.html:15
 msgid "Greetings from Hexlet!"
 msgstr "Привет от Хекслета!"
 
-#: task_manager/templates/index.html:13
+#: task_manager/templates/index.html:16
 msgid "Practical programming courses"
 msgstr "Практические курсы по программированию"
 
-#: task_manager/templates/index.html:16
+#: task_manager/templates/index.html:19
 #, fuzzy
 #| msgid "To learn more"
 msgid "Learn more"
@@ -46,68 +46,108 @@ msgstr "Узнать больше"
 msgid "Task manager Hexlet"
 msgstr "Менеджер задач Hexlet"
 
-#: task_manager/templates/layout/base.html:20
+#: task_manager/templates/layout/navbar.html:4
 msgid "Task manager"
 msgstr "Менеджер задач"
 
-#: task_manager/templates/layout/base.html:30
-#: task_manager/templates/users/users_list.html:7
+#: task_manager/templates/layout/navbar.html:14
+#: task_manager/templates/users/users_list.html:11
 msgid "Users"
 msgstr "Пользователи"
 
-#: task_manager/templates/layout/base.html:35
+#: task_manager/templates/layout/navbar.html:20
+msgid "Statuses"
+msgstr "Статусы"
+
+#: task_manager/templates/layout/navbar.html:23
+msgid "Tags"
+msgstr "Метки"
+
+#: task_manager/templates/layout/navbar.html:26
+msgid "Tasks"
+msgstr "Задачи"
+
+#: task_manager/templates/layout/navbar.html:29
+msgid "Logout"
+msgstr "Выйти"
+
+#: task_manager/templates/layout/navbar.html:35
 msgid "Login"
 msgstr "Вход"
 
-#: task_manager/templates/layout/base.html:38
-#: task_manager/templates/users/create.html:7
+#: task_manager/templates/layout/navbar.html:38 task_manager/users/views.py:25
 msgid "Registration"
 msgstr "Регистрация"
 
-#: task_manager/templates/users/create.html:11
-#: task_manager/templates/users/create.html:12
-msgid "Name"
-msgstr "Имя"
+#: task_manager/templates/users/users_list.html:15
+msgid "ID"
+msgstr "ID"
 
-#: task_manager/templates/users/create.html:14
-#: task_manager/templates/users/create.html:15
-msgid "Surname"
-msgstr "Фамилия"
-
-#: task_manager/templates/users/create.html:17
-#: task_manager/templates/users/create.html:23
-#: task_manager/templates/users/create.html:30
-#: task_manager/templates/users/users_list.html:12
+#: task_manager/templates/users/users_list.html:16
 #, fuzzy
 #| msgid "Users"
 msgid "Username"
 msgstr "Имя пользователя"
 
-#: task_manager/templates/users/create.html:27
-msgid "Password"
-msgstr "Пароль"
-
-#: task_manager/templates/users/create.html:35
-#: task_manager/templates/users/create.html:36
-msgid "Password confirmation"
-msgstr "Подтверждение пароля"
-
-#: task_manager/templates/users/users_list.html:11
-msgid "ID"
-msgstr "ID"
-
-#: task_manager/templates/users/users_list.html:13
+#: task_manager/templates/users/users_list.html:17
 msgid "Full name"
 msgstr "Полное имя"
 
-#: task_manager/templates/users/users_list.html:14
+#: task_manager/templates/users/users_list.html:18
 msgid "Creation date"
 msgstr "Дата создания"
 
-#: task_manager/templates/users/users_list.html:26
+#: task_manager/templates/users/users_list.html:31
 msgid "Change"
+msgstr "Изменить"
+
+#: task_manager/templates/users/users_list.html:33
+msgid "Delete"
+msgstr "Удалить"
+
+#: task_manager/users/views.py:23
+msgid "User successfully registered"
 msgstr ""
 
-#: task_manager/templates/users/users_list.html:27
-msgid "Изменить"
-msgstr "Удалить"
+#: task_manager/users/views.py:25
+#, fuzzy
+#| msgid "Registration"
+msgid "Registrate"
+msgstr "Регистрация"
+
+#: task_manager/users/views.py:37
+msgid "User updated successfully"
+msgstr ""
+
+#: task_manager/users/views.py:38
+#, fuzzy
+#| msgid "Users"
+msgid "User change"
+msgstr "Имя пользователя"
+
+#: task_manager/users/views.py:38
+msgid "Update"
+msgstr ""
+
+#: task_manager/views.py:23
+msgid "Log in"
+msgstr ""
+
+#: task_manager/views.py:31
+msgid "You are logged out"
+msgstr ""
+
+#~ msgid "Name"
+#~ msgstr "Имя"
+
+#~ msgid "Surname"
+#~ msgstr "Фамилия"
+
+#~ msgid "Password"
+#~ msgstr "Пароль"
+
+#~ msgid "Password confirmation"
+#~ msgstr "Подтверждение пароля"
+
+#~ msgid "Изменить"
+#~ msgstr "Удалить"
