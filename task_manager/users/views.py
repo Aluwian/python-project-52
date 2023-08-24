@@ -1,8 +1,11 @@
 from django.urls import reverse_lazy
 from django.views.generic.list import ListView
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView, DeletionMixin
 from django.contrib.messages.views import SuccessMessageMixin
-from task_manager.helpers import CustomLoginRequiresMixin, CustomPermissionRequiredMixin
+from task_manager.helpers import (
+    CustomLoginRequiresMixin,
+    CustomPermissionRequiredMixin,
+)
 from .models import User
 from .form import CreateUserForm
 from django.utils.translation import gettext_lazy as _
@@ -37,3 +40,16 @@ class UpdateUserView(
     success_url = reverse_lazy("UsersList")
     success_message = _("User updated successfully")
     extra_context = {"title": _("User change"), "button_text": _("Update")}
+
+
+class DeleteUserView(
+    CustomLoginRequiresMixin,
+    CustomPermissionRequiredMixin,
+    SuccessMessageMixin,
+    DeleteView,
+):
+    model = User
+    template_name = "users/delete.html"
+    success_message = _("User updated successfully")
+    success_url = reverse_lazy("UsersList")
+    extra_context = {"title": _("Delete user"), "button_text": _("Delete")}

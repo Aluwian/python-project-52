@@ -1,4 +1,4 @@
-<!-- task-manager/templates/users.html -->
+<!-- task-manager/templates/users/users.html -->
 
 {% extends "layout/base.html" %}
 {% load i18n %}
@@ -30,7 +30,7 @@
         <div>
           <a href="{% url 'UpdateUser' user.id %}">{% trans "Update" %}</a>
         </div>
-        <div><a href="/">{% trans "Delete" %}</a></div>
+        <div><a href="{% url 'DeleteUser' user.id %}">{% trans "Delete" %}</a></div>
       </td>
     </tr>
     {% endfor %}
