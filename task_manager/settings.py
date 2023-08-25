@@ -152,3 +152,4 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 LOGIN_URL = "Login"
+FIXTURE_DIRS = ("task_manager/fixtures/",)

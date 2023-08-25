@@ -1,0 +1,32 @@
+[
+  {
+    "model": "users.User",
+    "pk": 2,
+    "fields": {
+      "first_name": "Anna",
+      "last_name": "Karenina",
+      "username": "Anna_K",
+      "password": "1q1"
+    }
+  },
+  {
+    "model": "users.User",
+    "pk": 3,
+    "fields": {
+      "first_name": "Gerasim",
+      "last_name": "NoFamily",
+      "username": "Gerasim",
+      "password": "frgt53s"
+    }
+  },
+    {
+    "model": "users.User",
+    "pk": 4,
+    "fields": {
+      "first_name": "Elsa",
+      "last_name": "Frost",
+      "username": "IceQueen",
+      "password": "dfe4334d"
+    }
+  }
+]
