@@ -1,7 +1,7 @@
 [
   {
     "model": "users.User",
-    "pk": 2,
+    "pk": 1,
     "fields": {
       "first_name": "Anna",
       "last_name": "Karenina",
@@ -11,7 +11,7 @@
   },
   {
     "model": "users.User",
-    "pk": 3,
+    "pk": 2,
     "fields": {
       "first_name": "Gerasim",
       "last_name": "NoFamily",
@@ -21,7 +21,7 @@
   },
     {
     "model": "users.User",
-    "pk": 4,
+    "pk": 3,
     "fields": {
       "first_name": "Elsa",
       "last_name": "Frost",

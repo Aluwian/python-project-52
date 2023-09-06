@@ -145,11 +145,11 @@ LOCALE_PATHS = [os.path.join(BASE_DIR, "task_manager/locale")]
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = "static/"
+LOGIN_URL = "Login"
+
+FIXTURE_DIRS = ("task_manager/fixtures/",)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-LOGIN_URL = "Login"
-FIXTURE_DIRS = ("task_manager/fixtures/",)

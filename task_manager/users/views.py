@@ -21,6 +21,7 @@ class UsersListView(ListView):
 
 
 class CreateUserView(SuccessMessageMixin, CreateView):
+    model = User
     form_class = CreateUserForm
     template_name = "layout/form.html"
     success_message = _("User successfully registered")

@@ -1,16 +1,8 @@
-from django.test import TestCase
-from task_manager.users.models import User
+from .files import DownloadUsers
 
 
-class ModelsTestCase(TestCase):
-    fixtures = ["users.json"]
-
-    @classmethod
-    def setUp(cls):
-        cls.user_1 = User.objects.create(pk=2)
-        cls.user_2 = User.objects.create(pk=3)
-        cls.user_3 = User.objects.create(pk=4)
-
-    def test_user_parameters(self):
-        self.count = User.objects.count()
-        self.assertEqual(self.count, 4)
+class MyTestCase(DownloadUsers):
+    def test_user_model(self):
+        self.assertEqual(self.user_1.username, "Anna_K")
+        self.assertEqual(self.user_2.first_name, "Gerasim")
+        self.assertEqual(self.count, 3)

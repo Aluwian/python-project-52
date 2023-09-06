@@ -1,0 +1,18 @@
+{
+  "create": {
+    "valid": {
+      "first_name": "Tom",
+      "last_name": "Soyer",
+      "username": "Tommy",
+      "password1": "sdf41sd",
+      "password2": "sdf41sd"
+    }
+  },
+  "update": {
+    "username": "Tommy",
+    "first_name": "StuarRt",
+    "last_name": "Sutcliffgfe",
+    "password1": "q1q",
+    "password2": "q1q"
+  }
+}
