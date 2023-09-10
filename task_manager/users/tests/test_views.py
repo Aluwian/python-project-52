@@ -9,6 +9,10 @@ class TestUserList(DownloadUsers):
         response = self.client.get(reverse_lazy("UsersList"))
         self.assertEqual(response.status_code, 200)
 
+    def test_users_content(self):
+        response = self.client.get(reverse_lazy("UsersList"))
+        self.assertQuerysetEqual(response.context["users"], self.users)
+
 
 class TestCreateUser(DownloadUsers):
     def test_create_view(self):
