@@ -1,18 +1,10 @@
-import json
-import os
 from django.test import TestCase, Client
+from task_manager.helpers import open_file
 from task_manager.users.models import User
 
 
-def open_file(file_name):
-    with open(
-        os.path.abspath(f"task_manager/fixtures/{file_name}"), "r"
-    ) as file:
-        return json.loads(file.read())
-
-
 class DownloadUsers(TestCase):
-    fixtures = ["users.json"]
+    fixtures = ["users.json", "statuses.json"]
     new_user = open_file("new_user.json")
 
     def setUp(self):

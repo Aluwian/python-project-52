@@ -6,7 +6,7 @@ from django.views.generic.edit import (
     DeleteView,
 )
 from django.contrib.messages.views import SuccessMessageMixin
-from task_manager.helpers import (
+from task_manager.my_mixins import (
     CustomLoginRequiresMixin,
     CustomPermissionRequiredMixin,
 )
