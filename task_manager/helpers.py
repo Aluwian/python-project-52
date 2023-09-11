@@ -12,7 +12,9 @@ class CustomLoginRequiresMixin(LoginRequiredMixin):
     def dispatch(self, request, *args, **kwargs):
         if not request.user.is_authenticated:
             messages.add_message(
-                request, messages.ERROR, _("You are not authorized! Please sign in.")
+                request,
+                messages.ERROR,
+                _("You are not authorized! Please sign in."),
             )
             return redirect(reverse_lazy("Login"))
         return super().dispatch(request, *args, **kwargs)

@@ -1,6 +1,10 @@
 from django.urls import reverse_lazy
 from django.views.generic.list import ListView
-from django.views.generic.edit import CreateView, UpdateView, DeleteView, DeletionMixin
+from django.views.generic.edit import (
+    CreateView,
+    UpdateView,
+    DeleteView,
+)
 from django.contrib.messages.views import SuccessMessageMixin
 from task_manager.helpers import (
     CustomLoginRequiresMixin,
