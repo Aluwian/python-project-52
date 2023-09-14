@@ -19,7 +19,7 @@ class TestCreateUser(DownloadUsers):
         response = self.client.get(reverse_lazy("CreateUser"))
         self.assertEqual(response.status_code, 200)
 
-    def test_user_create(self):
+    def test_user_create_valid(self):
         valid_data = self.new_user["create"]["valid"].copy()
 
         user = User.objects.create(

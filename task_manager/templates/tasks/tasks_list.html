@@ -1,4 +1,4 @@
-<!-- task-manager/templates/statuses/statuses.html -->
+<!-- task-manager/templates/tasks/tasks_list.html -->
 
 {% extends "layout/base.html" %}
 {% load i18n %}
@@ -12,8 +12,8 @@
     {% endif %}
 </div>
 <div>
-  <h1 class="my-4">{% trans "Statuses" %}</h1>
-  <a class="nav-link" href="{% url 'CreateStatus' %}">{% trans "Create status" %}</a>
+  <h1 class="my-4">{% trans "Tasks" %}</h1>
+  <a class="nav-link" href="{% url 'CreateTask' %}">{% trans "Create task" %}</a>
 </div>
 <table class="table table-striped">
   <thead>
