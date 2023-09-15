@@ -25,7 +25,7 @@ class TestCreateStatus(DownloadStatuses):
         response = self.client.get(reverse_lazy("CreateStatus"))
         self.assertEqual(response.status_code, 200)
 
-    def test_user_create(self):
+    def test_status_create(self):
         valid_data = self.new_status["create"]["valid"].copy()
 
         status = Status.objects.create(

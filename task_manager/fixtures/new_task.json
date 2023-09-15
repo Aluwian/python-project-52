@@ -1,0 +1,12 @@
+{
+  "create": {
+    "valid": {
+      "name": "test_task",
+      "description": "Just do it",
+      "date_created": "2023-09-12 08:16:51.899654+00:00",
+      "author": 1,
+      "status": 1,
+      "executor": 2
+    }
+  }
+}

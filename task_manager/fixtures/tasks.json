@@ -1,0 +1,38 @@
+[
+  {
+    "model": "tasks.Task",
+    "pk": 1,
+    "fields": {
+      "name": "Task_One",
+      "description": "Just do it",
+      "date_created": "2023-09-11T13:20:30.456Z",
+      "author": 1,
+      "status": 2,
+      "executor": 2
+    }
+  },
+  {
+    "model": "tasks.Task",
+    "pk": 2,
+    "fields": {
+      "name": "Task_Two",
+      "description": "Just do it",
+      "date_created": "2023-09-12T13:21:30.456Z",
+      "author": 2,
+      "status": 1,
+      "executor": 2
+    }
+  },
+  {
+    "model": "tasks.Task",
+    "pk": 3,
+    "fields": {
+      "name": "Task_Three",
+      "description": "Just do it",
+      "date_created": "2023-09-12T13:22:30.456Z",
+      "author": 3,
+      "status": 3,
+      "executor": 1
+    }
+  }
+]
