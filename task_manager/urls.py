@@ -27,6 +27,6 @@ urlpatterns = i18n_patterns(
     path("logout/", LogoutUserView.as_view(), name="Logout"),
     path("users/", include("task_manager.users.urls")),
     path("statuses/", include("task_manager.statuses.urls")),
-    path("taska/", include("task_manager.tasks.urls")),
+    path("task/", include("task_manager.tasks.urls")),
     path("admin/", admin.site.urls),
 )

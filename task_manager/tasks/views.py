@@ -1,5 +1,6 @@
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
+from django.views.generic import DetailView
 from django.views.generic.edit import (
     CreateView,
     UpdateView,
@@ -19,6 +20,12 @@ class TasksListView(CustomLoginRequiresMixin, ListView):
 
     def get_queryset(self):
         return Task.objects.order_by("pk")
+
+
+class TaskView(CustomLoginRequiresMixin, DetailView):
+    template_name = "tasks/task_view.html"
+    model = Task
+    context_object_name = "task"
 
 
 class CreateTaskView(CustomLoginRequiresMixin, SuccessMessageMixin, CreateView):

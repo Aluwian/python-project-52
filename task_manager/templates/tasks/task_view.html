@@ -1,0 +1,50 @@
+<!-- task-manager/templates/tasks/tasks_view.html -->
+
+{% extends "layout/base.html" %} 
+{% load i18n %} 
+{% load django_bootstrap5 %} 
+
+{% block main %}
+<div>
+  <h1 class="my-4">{% trans "Task view" %}</h1>
+</div>
+<div class="card">
+    <div class="card-header bg-secondary text-white">
+        <h1>{% trans "Task" %}</h1>
+    </div>
+    <div class="card-body bg-light">
+        <p>{{ task.name }}</p>
+        <hr>
+    </div>
+    <div class="container">
+        <div class="row p-1">
+            <div class="col">{% trans "Author" %}</div>
+            <div class="col">{{ task.author }}</div>
+        </div>
+        <div class="row p-1">
+            <div class="col">{% trans "Executor" %}</div>
+            <div class="col">{{ task.executor }}</div>
+        </div>
+        <div class="row p-1">
+            <div class="col">{% trans "Status" %}</div>
+            <div class="col">{{ task.status }}</div>
+        </div>
+        <div class="row p-1">
+            <div class="col">{% trans "Creation date" %}</div>
+            <div class="col">{{ task.date_created|date:"d.m.Y H:i" }}</div>
+        </div>
+        <div class="row p-1">
+            <div class="col">{% trans "Tags" %}</div>
+            <div class="col">""</div>
+        </div>
+        <div class="row p-1">
+            <div>
+                <a href="{% url 'UpdateTask' task.id %}">{% trans "Update" %}</a>
+            </div>
+            <div>
+                <a href="/">{% trans "Delete" %}</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock main %}

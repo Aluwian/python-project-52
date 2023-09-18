@@ -10,7 +10,7 @@ class TestTasksList(DownloadTasks):
 
     def test_tasks_content(self):
         response = self.client.get(reverse_lazy("TasksList"))
-        self.assertQuerysetEqual(response.context["tasks"], self.tasks)
+        self.assertQuerySetEqual(response.context["tasks"], self.tasks)
 
     def test_user_no_login_view(self):
         self.client.logout()
@@ -18,6 +18,24 @@ class TestTasksList(DownloadTasks):
 
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, reverse_lazy("Login"))
+
+
+class TestTaskView(DownloadTasks):
+    def test_task_view(self):
+        response = self.client.get(reverse_lazy("TaskPage", kwargs={"pk": 1}))
+        self.assertEqual(response.status_code, 200)
+
+    def test_user_no_login_view(self):
+        self.client.logout()
+        response = self.client.get(reverse_lazy("TaskPage", kwargs={"pk": 1}))
+
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, reverse_lazy("Login"))
+
+    def test_task_content(self):
+        response = self.client.get(reverse_lazy("TaskPage", kwargs={"pk": 1}))
+        self.assertEqual(response.context["task"].name, self.task_1.name)
+        self.assertEqual(response.context["task"].author, self.task_1.author)
 
 
 class TestCreateTask(DownloadTasks):
