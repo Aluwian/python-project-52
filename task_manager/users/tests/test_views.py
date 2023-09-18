@@ -44,7 +44,7 @@ class TestUpdateUser(DownloadUsers):
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, reverse_lazy("UsersList"))
 
-    def test_delete_no_login(self):
+    def test_update_no_login(self):
         response = self.client.get(reverse_lazy("UpdateUser", kwargs={"pk": 2}))
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, reverse_lazy("Login"))

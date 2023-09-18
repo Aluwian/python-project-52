@@ -44,6 +44,8 @@ class UpdateUserView(
     template_name = "layout/form.html"
     success_url = reverse_lazy("UsersList")
     success_message = _("User updated successfully")
+    permission_message = _("You do not have rights to change another user.")
+    permission_url = "UsersList"
     extra_context = {"title": _("User change"), "button_text": _("Update")}
 
 
@@ -57,4 +59,6 @@ class DeleteUserView(
     template_name = "users/delete.html"
     success_message = _("User updated successfully")
     success_url = reverse_lazy("UsersList")
+    permission_message = _("You do not have rights to delete another user.")
+    permission_url = "UsersList"
     extra_context = {"title": _("Delete user"), "button_text": _("Delete")}

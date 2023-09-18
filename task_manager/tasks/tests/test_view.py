@@ -36,3 +36,23 @@ class TestCreateTask(DownloadTasks):
         )
         self.assertEqual(task.name, data["name"])
         self.assertEqual(task.description, data["description"])
+
+    def test_user_no_login_view(self):
+        self.client.logout()
+        response = self.client.get(reverse_lazy("CreateTask"))
+
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, reverse_lazy("Login"))
+
+
+class TestUpdateTask(DownloadTasks):
+    def test_create_view(self):
+        response = self.client.get(reverse_lazy("UpdateTask", kwargs={"pk": 1}))
+        self.assertEqual(response.status_code, 200)
+
+    def test_user_no_login_view(self):
+        self.client.logout()
+        response = self.client.get(reverse_lazy("UpdateTask", kwargs={"pk": 1}))
+
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, reverse_lazy("Login"))

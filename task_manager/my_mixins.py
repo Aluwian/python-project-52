@@ -21,11 +21,12 @@ class CustomLoginRequiresMixin(LoginRequiredMixin):
 
 
 class CustomPermissionRequiredMixin(UserPassesTestMixin):
+    permission_message = None
+    permission_url = None
+
     def test_func(self):
         return self.get_object() == self.request.user
 
     def handle_no_permission(self):
-        messages.error(
-            self.request, _("You do not have rights to change another user.")
-        )
-        return redirect("UsersList")
+        messages.error(self.request, self.permission_message)
+        return redirect(self.permission_url)
