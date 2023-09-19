@@ -42,7 +42,7 @@
                 <a href="{% url 'UpdateTask' task.id %}">{% trans "Update" %}</a>
             </div>
             <div>
-                <a href="/">{% trans "Delete" %}</a>
+                <a href="{% url 'DeleteTask' task.id %}">{% trans "Delete" %}</a>
             </div>
         </div>
     </div>

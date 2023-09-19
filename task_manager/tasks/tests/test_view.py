@@ -74,3 +74,22 @@ class TestUpdateTask(DownloadTasks):
 
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, reverse_lazy("Login"))
+
+
+class TestDeleteTask(DownloadTasks):
+    def test_create_view(self):
+        response = self.client.get(reverse_lazy("DeleteTask", kwargs={"pk": 1}))
+        self.assertEqual(response.status_code, 200)
+
+    def test_user_no_login_view(self):
+        self.client.logout()
+        response = self.client.get(reverse_lazy("DeleteTask", kwargs={"pk": 1}))
+
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, reverse_lazy("Login"))
+
+    def test_delete_user_no_author(self):
+        self.client.force_login(self.user1)
+        response = self.client.get(reverse_lazy("DeleteTask", kwargs={"pk": 2}))
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, reverse_lazy("TasksList"))

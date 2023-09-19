@@ -11,7 +11,7 @@ from .form import CreateStatusForm
 from .models import Status
 from django.utils.translation import gettext_lazy as _
 
-from ..my_mixins import CustomLoginRequiresMixin
+from ..my_mixins import CustomLoginRequiresMixin, ProtectedDeleteMixin
 
 
 class StatusListView(CustomLoginRequiresMixin, ListView):
@@ -46,10 +46,18 @@ class UpdateStatusView(
 
 
 class DeleteStatusView(
-    CustomLoginRequiresMixin, SuccessMessageMixin, DeleteView
+    CustomLoginRequiresMixin,
+    SuccessMessageMixin,
+    ProtectedDeleteMixin,
+    DeleteView,
 ):
     model = Status
     template_name = "statuses/delete.html"
+
     success_message = _("Status delete successfully")
     success_url = reverse_lazy("StatusesList")
+
+    error_message = _("Cannot delete status because it is in use")
+    error_url = reverse_lazy("StatusesList")
+
     extra_context = {"title": _("Delete status"), "button_text": _("Delete")}

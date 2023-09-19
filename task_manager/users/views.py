@@ -9,6 +9,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 from task_manager.my_mixins import (
     CustomLoginRequiresMixin,
     CustomPermissionRequiredMixin,
+    ProtectedDeleteMixin,
 )
 from .models import User
 from .form import CreateUserForm
@@ -52,13 +53,20 @@ class UpdateUserView(
 class DeleteUserView(
     CustomLoginRequiresMixin,
     CustomPermissionRequiredMixin,
+    ProtectedDeleteMixin,
     SuccessMessageMixin,
     DeleteView,
 ):
     model = User
     template_name = "users/delete.html"
-    success_message = _("User updated successfully")
+
+    success_message = _("User deleted successfully")
     success_url = reverse_lazy("UsersList")
+
     permission_message = _("You do not have rights to delete another user.")
-    permission_url = "UsersList"
+    permission_url = reverse_lazy("UsersList")
+
+    error_message = _("Cannot delete user because it is in use")
+    error_url = reverse_lazy("UsersList")
+
     extra_context = {"title": _("Delete user"), "button_text": _("Delete")}

@@ -4,13 +4,16 @@ from django.views.generic import DetailView
 from django.views.generic.edit import (
     CreateView,
     UpdateView,
-    # DeleteView,
+    DeleteView,
 )
 from django.views.generic.list import ListView
 from django.utils.translation import gettext_lazy as _
 from .form import CreateTaskForm
 from .models import Task
-from ..my_mixins import CustomLoginRequiresMixin
+from ..my_mixins import (
+    CustomLoginRequiresMixin,
+    AuthorPermissionMixin,
+)
 
 
 class TasksListView(CustomLoginRequiresMixin, ListView):
@@ -52,3 +55,18 @@ class UpdateTaskView(
     success_message = _("Task successfully updated")
     success_url = reverse_lazy("TasksList")
     extra_context = {"title": _("Update task"), "button_text": _("Update")}
+
+
+class DeleteTaskView(
+    CustomLoginRequiresMixin,
+    AuthorPermissionMixin,
+    SuccessMessageMixin,
+    DeleteView,
+):
+    model = Task
+    template_name = "tasks/delete.html"
+    success_message = _("User deleted successfully")
+    success_url = reverse_lazy("TasksList")
+    permission_message = _("A task can only be deleted by its author")
+    permission_url = reverse_lazy("TasksList")
+    extra_context = {"title": _("Delete task"), "button_text": _("Delete")}
