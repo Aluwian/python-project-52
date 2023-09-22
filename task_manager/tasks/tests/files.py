@@ -6,7 +6,7 @@ from task_manager.tasks.models import Task
 
 
 class DownloadTasks(TestCase):
-    fixtures = ["users.json", "statuses.json", "tasks.json"]
+    fixtures = ["users.json", "statuses.json", "tasks.json", "labels.json"]
     new_task = open_file("new_task.json")
 
     def setUp(self):

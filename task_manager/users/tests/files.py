@@ -4,7 +4,7 @@ from task_manager.users.models import User
 
 
 class DownloadUsers(TestCase):
-    fixtures = ["users.json", "statuses.json", "tasks.json"]
+    fixtures = ["users.json", "statuses.json", "tasks.json", "labels.json"]
     new_user = open_file("new_user.json")
 
     def setUp(self):
