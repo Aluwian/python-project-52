@@ -35,7 +35,31 @@ class TestCreateLabelView(DownloadLabels):
     def test_label_create(self):
         valid_data = self.new_label["create"]["valid"].copy()
 
-        label = Label.objects.create(
-            name=valid_data["name"]
-        )
+        label = Label.objects.create(name=valid_data["name"])
         self.assertEqual(label.name, valid_data["name"])
+
+
+class TestUpdateLabel(DownloadLabels):
+    def test_update_view(self):
+        response = self.client.get(reverse_lazy("UpdateLabel"))
+        self.assertEqual(response.status_code, 200)
+
+    def test_user_no_login_view(self):
+        self.client.logout()
+        response = self.client.get(reverse_lazy("UpdateLabel"))
+
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, reverse_lazy("Login"))
+
+
+class TestDeleteLabel(DownloadLabels):
+    def test_update_view(self):
+        response = self.client.get(reverse_lazy("DeleteLabel"))
+        self.assertEqual(response.status_code, 200)
+
+    def test_user_no_login_view(self):
+        self.client.logout()
+        response = self.client.get(reverse_lazy("DeleteLabel"))
+
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, reverse_lazy("Login"))
