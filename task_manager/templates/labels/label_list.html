@@ -31,9 +31,9 @@
       <td>{{ label.date_created|date:"d.m.Y H:i" }}</td>
       <td>
         <div>
-          <a href="/">{% trans "Update" %}</a>
+          <a href="{% url 'UpdateLabel' label.id %}">{% trans "Update" %}</a>
         </div>
-        <div><a href="/">{% trans "Delete" %}</a></div>
+        <div><a href="{% url 'DeleteLabel' label.id %}">{% trans "Delete" %}</a></div>
       </td>
     </tr>
      {% endfor %}
