@@ -8,18 +8,25 @@ from django.views.generic.edit import (
 )
 from django.views.generic.list import ListView
 from django.utils.translation import gettext_lazy as _
+from django_filters.views import FilterView
+
 from .form import CreateTaskForm
 from .models import Task
 from ..my_mixins import (
     CustomLoginRequiresMixin,
     AuthorPermissionMixin,
 )
+from .filter import FilterTasks
 
 
-class TasksListView(CustomLoginRequiresMixin, ListView):
+class TasksListView(CustomLoginRequiresMixin, FilterView, ListView):
     template_name = "tasks/tasks_list.html"
     model = Task
+    filterset_class = FilterTasks
     context_object_name = "tasks"
+    extra_context = {
+        "button_text": _("Show"),
+    }
 
     def get_queryset(self):
         return Task.objects.order_by("pk")
