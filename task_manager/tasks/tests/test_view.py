@@ -20,10 +20,42 @@ class TestTasksList(DownloadTasks):
         self.assertRedirects(response, reverse_lazy("Login"))
 
 
+class TestFilterTask(DownloadTasks):
+    def teat_task_filter_by_label(self):
+        response = self.client.get(
+            reverse_lazy("TasksList"), {"labels": self.label1.pk}
+        )
+        self.assertEqual(response.context["tasks"].count(), 2)
+        self.assertContains(response, self.task_1.name)
+        self.assertContains(response, self.task_3.name)
+
+    def test_task_filter_by_status(self):
+        response = self.client.get(
+            reverse_lazy("TasksList"), {"status": self.status1.pk}
+        )
+        self.assertEqual(response.context["tasks"].count(), 1)
+        self.assertContains(response, self.task_2.name)
+
+    def test_task_by_executor(self):
+        response = self.client.get(
+            reverse_lazy("TasksList"), {"executor": self.user2.pk}
+        )
+        self.assertEqual(response.context["tasks"].count(), 2)
+        self.assertContains(response, self.task_1.name)
+        self.assertContains(response, self.task_2.name)
+
+    def test_task_filter_by_own_task(self):
+        response = self.client.get(
+            reverse_lazy("TasksList"), {"author_task": self.user1.pk}
+        )
+        self.assertEqual(response.context["tasks"].count(), 1)
+
+
 class TestTaskView(DownloadTasks):
     def test_task_view(self):
         response = self.client.get(reverse_lazy("TaskPage", kwargs={"pk": 1}))
         self.assertEqual(response.status_code, 200)
+        self.assertContains(response, self.task_1.name)
 
     def test_user_no_login_view(self):
         self.client.logout()
@@ -49,7 +81,7 @@ class TestCreateTask(DownloadTasks):
             name=data["name"],
             description=data["description"],
             author=self.user1,
-            status=self.status,
+            status=self.status1,
             executor=self.user2,
         )
         self.assertEqual(task.name, data["name"])
