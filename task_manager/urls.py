@@ -22,9 +22,9 @@ from task_manager.views import HomePageView, LoginUserView, LogoutUserView
 
 
 urlpatterns = i18n_patterns(
-    path("", HomePageView.as_view(), name="Home"),
-    path("login/", LoginUserView.as_view(), name="Login"),
-    path("logout/", LogoutUserView.as_view(), name="Logout"),
+    path("", HomePageView.as_view(), name="home"),
+    path("login/", LoginUserView.as_view(), name="login"),
+    path("logout/", LogoutUserView.as_view(), name="logout"),
     path("users/", include("task_manager.users.urls")),
     path("statuses/", include("task_manager.statuses.urls")),
     path("task/", include("task_manager.tasks.urls")),

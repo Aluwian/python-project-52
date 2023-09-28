@@ -6,17 +6,17 @@ from task_manager.users.models import User
 
 class TestUserList(DownloadUsers):
     def test_list_view(self):
-        response = self.client.get(reverse_lazy("UsersList"))
+        response = self.client.get(reverse_lazy("users"))
         self.assertEqual(response.status_code, 200)
 
     def test_users_content(self):
-        response = self.client.get(reverse_lazy("UsersList"))
+        response = self.client.get(reverse_lazy("users"))
         self.assertQuerysetEqual(response.context["users"], self.users)
 
 
 class TestCreateUser(DownloadUsers):
     def test_create_view(self):
-        response = self.client.get(reverse_lazy("CreateUser"))
+        response = self.client.get(reverse_lazy("sign_up"))
         self.assertEqual(response.status_code, 200)
 
     def test_user_create_valid(self):
@@ -35,34 +35,46 @@ class TestCreateUser(DownloadUsers):
 class TestUpdateUser(DownloadUsers):
     def test_update_view(self):
         self.client.force_login(self.user_1)
-        response = self.client.get(reverse_lazy("UpdateUser", kwargs={"pk": 1}))
+        response = self.client.get(
+            reverse_lazy("user_update", kwargs={"pk": 1})
+        )
         self.assertEqual(response.status_code, 200)
 
     def test_update_another_user(self):
         self.client.force_login(self.user_1)
-        response = self.client.get(reverse_lazy("UpdateUser", kwargs={"pk": 2}))
+        response = self.client.get(
+            reverse_lazy("user_update", kwargs={"pk": 2})
+        )
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, reverse_lazy("UsersList"))
+        self.assertRedirects(response, reverse_lazy("users"))
 
     def test_update_no_login(self):
-        response = self.client.get(reverse_lazy("UpdateUser", kwargs={"pk": 2}))
+        response = self.client.get(
+            reverse_lazy("user_update", kwargs={"pk": 2})
+        )
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, reverse_lazy("Login"))
+        self.assertRedirects(response, reverse_lazy("login"))
 
 
 class TestDeleteUSer(DownloadUsers):
     def test_delete_view(self):
         self.client.force_login(self.user_1)
-        response = self.client.get(reverse_lazy("DeleteUser", kwargs={"pk": 1}))
+        response = self.client.get(
+            reverse_lazy("user_delete", kwargs={"pk": 1})
+        )
         self.assertEqual(response.status_code, 200)
 
     def test_delete_another_user(self):
         self.client.force_login(self.user_1)
-        response = self.client.get(reverse_lazy("DeleteUser", kwargs={"pk": 2}))
+        response = self.client.get(
+            reverse_lazy("user_delete", kwargs={"pk": 2})
+        )
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, reverse_lazy("UsersList"))
+        self.assertRedirects(response, reverse_lazy("users"))
 
     def test_delete_no_login(self):
-        response = self.client.get(reverse_lazy("DeleteUser", kwargs={"pk": 2}))
+        response = self.client.get(
+            reverse_lazy("user_delete", kwargs={"pk": 2})
+        )
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, reverse_lazy("Login"))
+        self.assertRedirects(response, reverse_lazy("login"))

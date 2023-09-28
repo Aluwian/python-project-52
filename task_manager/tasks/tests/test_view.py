@@ -5,25 +5,25 @@ from task_manager.tasks.models import Task
 
 class TestTasksList(DownloadTasks):
     def test_tasks_view(self):
-        response = self.client.get(reverse_lazy("TasksList"))
+        response = self.client.get(reverse_lazy("tasks"))
         self.assertEqual(response.status_code, 200)
 
     def test_tasks_content(self):
-        response = self.client.get(reverse_lazy("TasksList"))
+        response = self.client.get(reverse_lazy("tasks"))
         self.assertQuerySetEqual(response.context["tasks"], self.tasks)
 
     def test_user_no_login_view(self):
         self.client.logout()
-        response = self.client.get(reverse_lazy("TasksList"))
+        response = self.client.get(reverse_lazy("tasks"))
 
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, reverse_lazy("Login"))
+        self.assertRedirects(response, reverse_lazy("login"))
 
 
 class TestFilterTask(DownloadTasks):
     def teat_task_filter_by_label(self):
         response = self.client.get(
-            reverse_lazy("TasksList"), {"labels": self.label1.pk}
+            reverse_lazy("tasks"), {"labels": self.label1.pk}
         )
         self.assertEqual(response.context["tasks"].count(), 2)
         self.assertContains(response, self.task_1.name)
@@ -31,14 +31,14 @@ class TestFilterTask(DownloadTasks):
 
     def test_task_filter_by_status(self):
         response = self.client.get(
-            reverse_lazy("TasksList"), {"status": self.status1.pk}
+            reverse_lazy("tasks"), {"status": self.status1.pk}
         )
         self.assertEqual(response.context["tasks"].count(), 1)
         self.assertContains(response, self.task_2.name)
 
     def test_task_by_executor(self):
         response = self.client.get(
-            reverse_lazy("TasksList"), {"executor": self.user2.pk}
+            reverse_lazy("tasks"), {"executor": self.user2.pk}
         )
         self.assertEqual(response.context["tasks"].count(), 2)
         self.assertContains(response, self.task_1.name)
@@ -46,33 +46,33 @@ class TestFilterTask(DownloadTasks):
 
     def test_task_filter_by_own_task(self):
         response = self.client.get(
-            reverse_lazy("TasksList"), {"author_task": self.user1.pk}
+            reverse_lazy("tasks"), {"author_task": self.user1.pk}
         )
         self.assertEqual(response.context["tasks"].count(), 1)
 
 
 class TestTaskView(DownloadTasks):
     def test_task_view(self):
-        response = self.client.get(reverse_lazy("TaskPage", kwargs={"pk": 1}))
+        response = self.client.get(reverse_lazy("task_show", kwargs={"pk": 1}))
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, self.task_1.name)
 
     def test_user_no_login_view(self):
         self.client.logout()
-        response = self.client.get(reverse_lazy("TaskPage", kwargs={"pk": 1}))
+        response = self.client.get(reverse_lazy("task_show", kwargs={"pk": 1}))
 
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, reverse_lazy("Login"))
+        self.assertRedirects(response, reverse_lazy("login"))
 
     def test_task_content(self):
-        response = self.client.get(reverse_lazy("TaskPage", kwargs={"pk": 1}))
+        response = self.client.get(reverse_lazy("task_show", kwargs={"pk": 1}))
         self.assertEqual(response.context["task"].name, self.task_1.name)
         self.assertEqual(response.context["task"].author, self.task_1.author)
 
 
 class TestCreateTask(DownloadTasks):
     def test_create_view(self):
-        response = self.client.get(reverse_lazy("CreateTask"))
+        response = self.client.get(reverse_lazy("task_create"))
         self.assertEqual(response.status_code, 200)
 
     def test_task_create(self):
@@ -89,39 +89,49 @@ class TestCreateTask(DownloadTasks):
 
     def test_user_no_login_view(self):
         self.client.logout()
-        response = self.client.get(reverse_lazy("CreateTask"))
+        response = self.client.get(reverse_lazy("task_create"))
 
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, reverse_lazy("Login"))
+        self.assertRedirects(response, reverse_lazy("login"))
 
 
 class TestUpdateTask(DownloadTasks):
     def test_create_view(self):
-        response = self.client.get(reverse_lazy("UpdateTask", kwargs={"pk": 1}))
+        response = self.client.get(
+            reverse_lazy("task_update", kwargs={"pk": 1})
+        )
         self.assertEqual(response.status_code, 200)
 
     def test_user_no_login_view(self):
         self.client.logout()
-        response = self.client.get(reverse_lazy("UpdateTask", kwargs={"pk": 1}))
+        response = self.client.get(
+            reverse_lazy("task_update", kwargs={"pk": 1})
+        )
 
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, reverse_lazy("Login"))
+        self.assertRedirects(response, reverse_lazy("login"))
 
 
 class TestDeleteTask(DownloadTasks):
     def test_create_view(self):
-        response = self.client.get(reverse_lazy("DeleteTask", kwargs={"pk": 1}))
+        response = self.client.get(
+            reverse_lazy("task_delete", kwargs={"pk": 1})
+        )
         self.assertEqual(response.status_code, 200)
 
     def test_user_no_login_view(self):
         self.client.logout()
-        response = self.client.get(reverse_lazy("DeleteTask", kwargs={"pk": 1}))
+        response = self.client.get(
+            reverse_lazy("task_delete", kwargs={"pk": 1})
+        )
 
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, reverse_lazy("Login"))
+        self.assertRedirects(response, reverse_lazy("login"))
 
     def test_delete_user_no_author(self):
         self.client.force_login(self.user1)
-        response = self.client.get(reverse_lazy("DeleteTask", kwargs={"pk": 2}))
+        response = self.client.get(
+            reverse_lazy("task_delete", kwargs={"pk": 2})
+        )
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, reverse_lazy("TasksList"))
+        self.assertRedirects(response, reverse_lazy("tasks"))

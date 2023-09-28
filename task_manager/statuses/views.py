@@ -30,7 +30,7 @@ class CreateStatusView(
     form_class = CreateStatusForm
     template_name = "layout/form.html"
     success_message = _("Status successfully created")
-    success_url = reverse_lazy("StatusesList")
+    success_url = reverse_lazy("statuses")
     extra_context = {"title": _("Create status"), "button_text": _("Create")}
 
 
@@ -41,7 +41,7 @@ class UpdateStatusView(
     form_class = CreateStatusForm
     template_name = "layout/form.html"
     success_message = _("Status successfully updated")
-    success_url = reverse_lazy("StatusesList")
+    success_url = reverse_lazy("statuses")
     extra_context = {"title": _("Update status"), "button_text": _("Update")}
 
 
@@ -55,9 +55,9 @@ class DeleteStatusView(
     template_name = "statuses/delete.html"
 
     success_message = _("Status delete successfully")
-    success_url = reverse_lazy("StatusesList")
+    success_url = reverse_lazy("statuses")
 
     error_message = _("Cannot delete status because it is in use")
-    error_url = reverse_lazy("StatusesList")
+    error_url = reverse_lazy("statuses")
 
     extra_context = {"title": _("Delete status"), "button_text": _("Delete")}

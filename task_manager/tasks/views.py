@@ -43,7 +43,7 @@ class CreateTaskView(CustomLoginRequiresMixin, SuccessMessageMixin, CreateView):
     form_class = CreateTaskForm
     template_name = "layout/form.html"
     success_message = _("Task successfully created")
-    success_url = reverse_lazy("TasksList")
+    success_url = reverse_lazy("tasks")
     extra_context = {"title": _("Create task"), "button_text": _("Create")}
 
     def form_valid(self, form):
@@ -60,7 +60,7 @@ class UpdateTaskView(
     form_class = CreateTaskForm
     template_name = "layout/form.html"
     success_message = _("Task successfully updated")
-    success_url = reverse_lazy("TasksList")
+    success_url = reverse_lazy("tasks")
     extra_context = {"title": _("Update task"), "button_text": _("Update")}
 
 
@@ -73,7 +73,7 @@ class DeleteTaskView(
     model = Task
     template_name = "tasks/delete.html"
     success_message = _("User deleted successfully")
-    success_url = reverse_lazy("TasksList")
+    success_url = reverse_lazy("tasks")
     permission_message = _("A task can only be deleted by its author")
-    permission_url = reverse_lazy("TasksList")
+    permission_url = reverse_lazy("tasks")
     extra_context = {"title": _("Delete task"), "button_text": _("Delete")}

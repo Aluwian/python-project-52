@@ -30,7 +30,7 @@ class CreateUserView(SuccessMessageMixin, CreateView):
     form_class = CreateUserForm
     template_name = "layout/form.html"
     success_message = _("User successfully registered")
-    success_url = reverse_lazy("Login")
+    success_url = reverse_lazy("login")
     extra_context = {"title": _("Registration"), "button_text": _("Registrate")}
 
 
@@ -43,10 +43,10 @@ class UpdateUserView(
     model = User
     form_class = CreateUserForm
     template_name = "layout/form.html"
-    success_url = reverse_lazy("UsersList")
+    success_url = reverse_lazy("users")
     success_message = _("User updated successfully")
     permission_message = _("You do not have rights to change another user.")
-    permission_url = "UsersList"
+    permission_url = "users"
     extra_context = {"title": _("User change"), "button_text": _("Update")}
 
 
@@ -61,12 +61,12 @@ class DeleteUserView(
     template_name = "users/delete.html"
 
     success_message = _("User deleted successfully")
-    success_url = reverse_lazy("UsersList")
+    success_url = reverse_lazy("users")
 
     permission_message = _("You do not have rights to delete another user.")
-    permission_url = reverse_lazy("UsersList")
+    permission_url = reverse_lazy("users")
 
     error_message = _("Cannot delete user because it is in use")
-    error_url = reverse_lazy("UsersList")
+    error_url = reverse_lazy("users")
 
     extra_context = {"title": _("Delete user"), "button_text": _("Delete")}

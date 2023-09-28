@@ -8,8 +8,8 @@ from task_manager.users.views import (
 
 
 urlpatterns = [
-    path("", UsersListView.as_view(), name="UsersList"),
-    path("create/", CreateUserView.as_view(), name="CreateUser"),
-    path("<int:pk>/update/", UpdateUserView.as_view(), name="UpdateUser"),
-    path("<int:pk>/delete/", DeleteUserView.as_view(), name="DeleteUser"),
+    path("", UsersListView.as_view(), name="users"),
+    path("create/", CreateUserView.as_view(), name="sign_up"),
+    path("<int:pk>/update/", UpdateUserView.as_view(), name="user_update"),
+    path("<int:pk>/delete/", DeleteUserView.as_view(), name="user_delete"),
 ]

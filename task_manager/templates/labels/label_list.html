@@ -12,7 +12,7 @@
 </div>
 <div>
   <h1 class="my-4">{% trans "Labels" %}</h1>
-  <a class="nav-link" href="{% url "CreateLabel" %}">{% trans "Create label" %}</a>
+  <a class="nav-link" href="{% url "label_create" %}">{% trans "Create label" %}</a>
 </div>
 <table class="table table-striped">
   <thead>
@@ -31,9 +31,9 @@
       <td>{{ label.date_created|date:"d.m.Y H:i" }}</td>
       <td>
         <div>
-          <a href="{% url 'UpdateLabel' label.id %}">{% trans "Update" %}</a>
+          <a href="{% url 'label_update' label.id %}">{% trans "Update" %}</a>
         </div>
-        <div><a href="{% url 'DeleteLabel' label.id %}">{% trans "Delete" %}</a></div>
+        <div><a href="{% url 'label_delete' label.id %}">{% trans "Delete" %}</a></div>
       </td>
     </tr>
      {% endfor %}

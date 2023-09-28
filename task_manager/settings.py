@@ -151,7 +151,7 @@ LOCALE_PATHS = [os.path.join(BASE_DIR, "task_manager/locale")]
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = "static/"
-LOGIN_URL = "Login"
+LOGIN_URL = "login"
 
 FIXTURE_DIRS = ("task_manager/fixtures/",)
 

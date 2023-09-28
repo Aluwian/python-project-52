@@ -17,7 +17,7 @@ class CustomLoginRequiresMixin(LoginRequiredMixin):
                 messages.ERROR,
                 _("You are not authorized! Please sign in."),
             )
-            return redirect(reverse_lazy("Login"))
+            return redirect(reverse_lazy("login"))
         return super().dispatch(request, *args, **kwargs)
 
 
