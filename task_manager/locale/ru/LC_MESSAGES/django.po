@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-28 10:17+0300\n"
+"POT-Creation-Date: 2023-09-28 10:31+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,33 +29,28 @@ msgid "Name"
 msgstr "Имя"
 
 #: task_manager/labels/views.py:32
-#, fuzzy
 #| msgid "User successfully registered"
 msgid "Label successfully created"
 msgstr "Пользователь успешно зарегистрирован"
 
 #: task_manager/labels/views.py:34
 #: task_manager/templates/labels/label_list.html:15
-#, fuzzy
 #| msgid "Creation date"
 msgid "Create label"
 msgstr "Создать метку"
 
 #: task_manager/labels/views.py:34 task_manager/statuses/views.py:34
 #: task_manager/tasks/views.py:47
-#, fuzzy
 #| msgid "Creation date"
 msgid "Create"
 msgstr "Создать"
 
 #: task_manager/labels/views.py:43
-#, fuzzy
 #| msgid "User successfully registered"
 msgid "Label successfully updated"
 msgstr "Пользователь успешно зарегистрирован"
 
 #: task_manager/labels/views.py:45
-#, fuzzy
 #| msgid "Update"
 msgid "Update label"
 msgstr "Обновить"
@@ -72,7 +67,6 @@ msgid "Update"
 msgstr "Обновить"
 
 #: task_manager/labels/views.py:56
-#, fuzzy
 #| msgid "User updated successfully"
 msgid "Label deleted successfully"
 msgstr "Пользователь успешно обновлен"
@@ -82,7 +76,6 @@ msgid "Cannot delete label because it is in use"
 msgstr "Невозможно удалить метку, поскольку она используется."
 
 #: task_manager/labels/views.py:60
-#, fuzzy
 #| msgid "Delete"
 msgid "Delete label"
 msgstr "Удалить метку"
@@ -111,32 +104,27 @@ msgid "Russian"
 msgstr "Русский"
 
 #: task_manager/statuses/views.py:32
-#, fuzzy
 #| msgid "User successfully registered"
 msgid "Status successfully created"
 msgstr "Статус успешно создан"
 
 #: task_manager/statuses/views.py:34
 #: task_manager/templates/statuses/statuses_list.html:16
-#, fuzzy
 #| msgid "Creation date"
 msgid "Create status"
 msgstr "Создать статус"
 
 #: task_manager/statuses/views.py:43
-#, fuzzy
 #| msgid "User successfully registered"
 msgid "Status successfully updated"
 msgstr "Статус успешно оббновлен"
 
 #: task_manager/statuses/views.py:45
-#, fuzzy
 #| msgid "Update"
 msgid "Update status"
 msgstr "Обновить"
 
 #: task_manager/statuses/views.py:57
-#, fuzzy
 #| msgid "User updated successfully"
 msgid "Status delete successfully"
 msgstr "Статус успешно удален"
@@ -146,17 +134,16 @@ msgid "Cannot delete status because it is in use"
 msgstr "Невозможно удалить статус, поскольку он используется."
 
 #: task_manager/statuses/views.py:63
-#, fuzzy
 #| msgid "Delete"
 msgid "Delete status"
 msgstr "Удалить"
 
-#: task_manager/tasks/filter.py:10
+#: task_manager/tasks/filter.py:11
 #: task_manager/templates/tasks/task_view.html:37
 msgid "Label"
 msgstr "Метка"
 
-#: task_manager/tasks/filter.py:12
+#: task_manager/tasks/filter.py:14
 msgid "Only own tasks"
 msgstr "Только свои задачи"
 
@@ -178,7 +165,6 @@ msgstr "Автор"
 #: task_manager/tasks/models.py:30
 #: task_manager/templates/tasks/task_view.html:29
 #: task_manager/templates/tasks/tasks_list.html:33
-#, fuzzy
 #| msgid "Statuses"
 msgid "Status"
 msgstr "Статус"
@@ -200,7 +186,6 @@ msgid "Show"
 msgstr "Показать"
 
 #: task_manager/tasks/views.py:45
-#, fuzzy
 #| msgid "User successfully registered"
 msgid "Task successfully created"
 msgstr "Пользователь успешно зарегистрирован"
@@ -211,19 +196,16 @@ msgid "Create task"
 msgstr "Создать задачу"
 
 #: task_manager/tasks/views.py:62
-#, fuzzy
 #| msgid "User successfully registered"
 msgid "Task successfully updated"
 msgstr "Пользователь успешно зарегистрирован"
 
 #: task_manager/tasks/views.py:64
-#, fuzzy
 #| msgid "Update"
 msgid "Update task"
 msgstr "Обновить"
 
 #: task_manager/tasks/views.py:75 task_manager/users/views.py:63
-#, fuzzy
 #| msgid "User updated successfully"
 msgid "User deleted successfully"
 msgstr "Пользователь успешно обновлен"
@@ -233,13 +215,11 @@ msgid "A task can only be deleted by its author"
 msgstr "Удалить задачу может только ее автор"
 
 #: task_manager/tasks/views.py:79
-#, fuzzy
 #| msgid "Delete"
 msgid "Delete task"
 msgstr "Удалить"
 
 #: task_manager/templates/index.html:15
-#, fuzzy
 #| msgid "Task manager"
 msgid "Task Manager"
 msgstr "Менеджер задач"
@@ -256,7 +236,6 @@ msgstr "Начать"
 #: task_manager/templates/statuses/delete.html:11
 #: task_manager/templates/tasks/delete.html:11
 #: task_manager/templates/users/delete.html:11
-#, fuzzy
 #| msgid "Are you sure you want to delete user "
 msgid "Are you sure you want to delete "
 msgstr "Вы уверены, что хотите удалить пользователя "
@@ -308,13 +287,11 @@ msgid "Task view"
 msgstr "Просмотр задачи"
 
 #: task_manager/templates/tasks/task_view.html:13
-#, fuzzy
 #| msgid "Tasks"
 msgid "Task"
 msgstr "Задача"
 
 #: task_manager/templates/users/users_list.html:16
-#, fuzzy
 #| msgid "Users"
 msgid "Username"
 msgstr "Имя пользователя"
@@ -324,7 +301,6 @@ msgid "Full name"
 msgstr "Полное имя"
 
 #: task_manager/users/form.py:9
-#, fuzzy
 #| msgid "Full name"
 msgid "First name"
 msgstr "Имя"
@@ -338,7 +314,6 @@ msgid "User successfully registered"
 msgstr "Пользователь успешно зарегистрирован"
 
 #: task_manager/users/views.py:34
-#, fuzzy
 #| msgid "Registration"
 msgid "Registrate"
 msgstr "Регистрация"
@@ -352,13 +327,11 @@ msgid "You do not have rights to change another user."
 msgstr "У вас нет прав для изменения другого пользователя."
 
 #: task_manager/users/views.py:50
-#, fuzzy
 #| msgid "Users"
 msgid "User change"
 msgstr "Имя пользователя"
 
 #: task_manager/users/views.py:66
-#, fuzzy
 #| msgid "You do not have rights to change another user."
 msgid "You do not have rights to delete another user."
 msgstr "У вас нет прав для изменения другого пользователя."
@@ -368,7 +341,6 @@ msgid "Cannot delete user because it is in use"
 msgstr "Невозможно удалить пользователя, так как он используется"
 
 #: task_manager/users/views.py:72
-#, fuzzy
 #| msgid "Delete"
 msgid "Delete user"
 msgstr "Удалить пользователя"
@@ -384,18 +356,3 @@ msgstr "Войти"
 #: task_manager/views.py:31
 msgid "You are logged out"
 msgstr "Вы вышли из системы"
-
-#~ msgid "Change"
-#~ msgstr "Изменить"
-
-#~ msgid "Surname"
-#~ msgstr "Фамилия"
-
-#~ msgid "Password"
-#~ msgstr "Пароль"
-
-#~ msgid "Password confirmation"
-#~ msgstr "Подтверждение пароля"
-
-#~ msgid "Изменить"
-#~ msgstr "Удалить"
