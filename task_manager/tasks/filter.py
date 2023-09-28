@@ -7,7 +7,9 @@ from task_manager.labels.models import Label
 
 
 class FilterTasks(django_filters.FilterSet):
-    labels = django_filters.ModelChoiceFilter(queryset=Label.objects.all())
+    labels = django_filters.ModelChoiceFilter(
+        queryset=Label.objects.all(), label=_("Label")
+    )
     author_task = django_filters.BooleanFilter(
         label=_("Only own tasks"),
         widget=forms.CheckboxInput,
