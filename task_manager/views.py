@@ -20,7 +20,7 @@ class LoginUserView(SuccessMessageMixin, LoginView):
     template_name = "layout/form.html"
     next_page = reverse_lazy("home")
     success_message = _("You are logged in")
-    extra_context = {"title": _("Log in"), "button_text": _("Log in")}
+    extra_context = {"title": _("Log in"), "button_text": _("Enter")}
 
 
 class LogoutUserView(LogoutView):
