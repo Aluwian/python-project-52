@@ -131,18 +131,18 @@ AUTH_USER_MODEL = "users.User"
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = "ru-RU"
+LANGUAGE_CODE = "ru"
 
 LANGUAGES = [
-    ("en", "English"),
-    ("ru", "Russian"),
+    ("en", _("English")),
+    ("ru", _("Russian")),
 ]
 
 TIME_ZONE = "UTC"
 USE_I18N = True
 USE_TZ = True
 
-LOCALE_PATHS = [os.path.join(BASE_DIR, "../locale")]
+LOCALE_PATHS = [os.path.join(BASE_DIR, "locale")]
 
 
 # Static files (CSS, JavaScript, Images)

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-29 10:44+0300\n"
+"POT-Creation-Date: 2023-09-29 11:48+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -87,6 +87,14 @@ msgstr "Удалить"
 #: task_manager/my_mixins.py:18
 msgid "You are not authorized! Please sign in."
 msgstr "Вы не авторизованы! Пожалуйста, выполните вход."
+
+#: task_manager/settings.py:137
+msgid "English"
+msgstr "Английский"
+
+#: task_manager/settings.py:138
+msgid "Russian"
+msgstr "Русский"
 
 #: task_manager/statuses/views.py:32
 msgid "Status successfully created"
