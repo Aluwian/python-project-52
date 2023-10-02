@@ -12,7 +12,7 @@ from task_manager.my_mixins import (
     ProtectedDeleteMixin,
 )
 from .models import User
-from .form import CreateUserForm
+from .form import CreateUserForm, UpdateUserForm
 from django.utils.translation import gettext_lazy as _
 
 
@@ -41,7 +41,7 @@ class UpdateUserView(
     UpdateView,
 ):
     model = User
-    form_class = CreateUserForm
+    form_class = UpdateUserForm
     template_name = "layout/form.html"
     success_url = reverse_lazy("users")
     success_message = _("User updated successfully")

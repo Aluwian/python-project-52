@@ -297,7 +297,7 @@ msgstr "Зарегистрировать"
 
 #: task_manager/users/views.py:47
 msgid "User updated successfully"
-msgstr "Пользователь успешно обновлен"
+msgstr "Пользователь успешно изменен"
 
 #: task_manager/users/views.py:48
 msgid "You do not have rights to change another user."
@@ -309,7 +309,7 @@ msgstr "Имя пользователя"
 
 #: task_manager/users/views.py:63
 msgid "User deleted successfully"
-msgstr "Пользователь успешно обновлен"
+msgstr "Пользователь успешно удален"
 
 #: task_manager/users/views.py:66
 msgid "You do not have rights to delete another user."
