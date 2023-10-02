@@ -7,9 +7,11 @@ from task_manager.labels.models import Label
 
 # Create your models here
 class Task(models.Model):
-    name = models.CharField(max_length=150, blank=False, unique=True)
+    name = models.CharField(
+        max_length=150, blank=False, unique=True, verbose_name=_("Name")
+    )
     description = models.TextField(
-        max_length=1000, blank=True, verbose_name=_("Name")
+        max_length=1000, blank=True, verbose_name=_("Description")
     )
     date_created = models.DateTimeField(
         auto_now_add=True,

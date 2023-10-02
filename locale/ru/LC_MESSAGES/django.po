@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-02 10:55+0300\n"
+"POT-Creation-Date: 2023-10-02 11:54+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: task_manager/labels/form.py:7 task_manager/statuses/form.py:7
-#: task_manager/tasks/models.py:12
+#: task_manager/tasks/models.py:11
 #: task_manager/templates/labels/label_list.html:21
 #: task_manager/templates/statuses/statuses_list.html:22
 #: task_manager/templates/tasks/tasks_list.html:32
@@ -69,11 +69,11 @@ msgstr "Метка успешно удалена"
 msgid "Cannot delete label because it is in use"
 msgstr "Невозможно удалить метку, потому что она используется"
 
-#: task_manager/labels/views.py:60
+#: task_manager/labels/views.py:61
 msgid "Delete label"
 msgstr "Удалить метку"
 
-#: task_manager/labels/views.py:60 task_manager/statuses/views.py:63
+#: task_manager/labels/views.py:62 task_manager/statuses/views.py:65
 #: task_manager/tasks/views.py:79 task_manager/users/views.py:72
 msgid "Yes, delete"
 msgstr "Да, удалить"
@@ -115,7 +115,7 @@ msgstr "Статус успешно удален"
 msgid "Cannot delete status because it is in use"
 msgstr "Невозможно удалить статус, потому что он используется"
 
-#: task_manager/statuses/views.py:63
+#: task_manager/statuses/views.py:64
 msgid "Delete status"
 msgstr "Удалить"
 
@@ -128,7 +128,12 @@ msgstr "Метка"
 msgid "Only own tasks"
 msgstr "Только свои задачи"
 
-#: task_manager/tasks/models.py:16
+#: task_manager/tasks/models.py:14
+#| msgid "Registration"
+msgid "Description"
+msgstr "Описание"
+
+#: task_manager/tasks/models.py:18
 #: task_manager/templates/labels/label_list.html:22
 #: task_manager/templates/statuses/statuses_list.html:23
 #: task_manager/templates/tasks/task_view.html:33
@@ -137,25 +142,25 @@ msgstr "Только свои задачи"
 msgid "Creation date"
 msgstr "Дата создания"
 
-#: task_manager/tasks/models.py:23
+#: task_manager/tasks/models.py:25
 #: task_manager/templates/tasks/task_view.html:21
 #: task_manager/templates/tasks/tasks_list.html:34
 msgid "Author"
 msgstr "Автор"
 
-#: task_manager/tasks/models.py:30
+#: task_manager/tasks/models.py:32
 #: task_manager/templates/tasks/task_view.html:29
 #: task_manager/templates/tasks/tasks_list.html:33
 msgid "Status"
 msgstr "Статус"
 
-#: task_manager/tasks/models.py:38
+#: task_manager/tasks/models.py:40
 #: task_manager/templates/tasks/task_view.html:25
 #: task_manager/templates/tasks/tasks_list.html:35
 msgid "Executor"
 msgstr "Исполнитель"
 
-#: task_manager/tasks/models.py:45
+#: task_manager/tasks/models.py:47
 #: task_manager/templates/labels/label_list.html:14
 #: task_manager/templates/layout/navbar.html:24
 msgid "Labels"
