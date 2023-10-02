@@ -82,7 +82,7 @@ msgstr "Удалить метку"
 #: task_manager/templates/users/users_list.html:33
 #: task_manager/users/views.py:72
 msgid "Delete"
-msgstr "Удалить"
+msgstr "Да, удалить"
 
 #: task_manager/my_mixins.py:18
 msgid "You are not authorized! Please sign in."
@@ -219,7 +219,7 @@ msgstr "Начать"
 #: task_manager/templates/tasks/delete.html:11
 #: task_manager/templates/users/delete.html:11
 msgid "Are you sure you want to delete "
-msgstr "Вы уверены, что хотите удалить пользователя "
+msgstr "Вы уверены, что хотите удалить "
 
 #: task_manager/templates/labels/label_list.html:20
 #: task_manager/templates/statuses/statuses_list.html:21
