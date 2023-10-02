@@ -10,12 +10,11 @@
 </div>
 <div class="card">
     <div class="card-header bg-secondary text-white">
-        <h1>{% trans "Task" %}</h1>
+        <h2>{{ task.name }}</h2>
     </div>
     <div class="card-body bg-light">
-        <p>{{ task.name }}</p>
-        <hr>
-    </div>
+        <p>{{ task.description }}</p>
+    <hr>
     <div class="container">
         <div class="row p-1">
             <div class="col">{% trans "Author" %}</div>
@@ -34,10 +33,14 @@
             <div class="col">{{ task.date_created|date:"d.m.Y H:i" }}</div>
         </div>
         <div class="row p-1">
-            <div class="col">{% trans "Label" %}</div>
-            {% for label in task.labels.all %}
-                <div class="col">"{{ label.name }}"</div>
-            {% endfor %}
+            <div class="col">
+                <h6>{% trans "Labels" %}:</h6>
+            <ul>
+                {% for label in task.labels.all %}
+                <li><div class="col">{{ label.name }}</div></li>
+                {% endfor %}
+            </ul>
+            </div>
         </div>
         <div class="row p-1">
             <div>
@@ -47,6 +50,7 @@
                 <a href="{% url 'task_delete' task.id %}">{% trans "Delete" %}</a>
             </div>
         </div>
+    </div>
     </div>
 </div>
 {% endblock main %}

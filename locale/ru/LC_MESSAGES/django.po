@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-02 11:54+0300\n"
+"POT-Creation-Date: 2023-10-02 12:04+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -120,7 +120,6 @@ msgid "Delete status"
 msgstr "Удалить"
 
 #: task_manager/tasks/filter.py:11
-#: task_manager/templates/tasks/task_view.html:37
 msgid "Label"
 msgstr "Метка"
 
@@ -129,7 +128,6 @@ msgid "Only own tasks"
 msgstr "Только свои задачи"
 
 #: task_manager/tasks/models.py:14
-#| msgid "Registration"
 msgid "Description"
 msgstr "Описание"
 
@@ -163,6 +161,7 @@ msgstr "Исполнитель"
 #: task_manager/tasks/models.py:47
 #: task_manager/templates/labels/label_list.html:14
 #: task_manager/templates/layout/navbar.html:24
+#: task_manager/templates/tasks/task_view.html:37
 msgid "Labels"
 msgstr "Метки"
 
