@@ -187,7 +187,6 @@ msgid "Update task"
 msgstr "Изменение задачи"
 
 #: task_manager/tasks/views.py:75
-#, fuzzy
 #| msgid "User deleted successfully"
 msgid "Task deleted successfully"
 msgstr "Задача успешно удалена"
@@ -198,7 +197,7 @@ msgstr "Задачу может удалить только ее автор"
 
 #: task_manager/tasks/views.py:79
 msgid "Delete task"
-msgstr "Удалить"
+msgstr "Удаление задачи"
 
 #: task_manager/templates/index.html:15
 msgid "Task Manager"
