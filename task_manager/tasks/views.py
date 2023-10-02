@@ -76,4 +76,4 @@ class DeleteTaskView(
     success_url = reverse_lazy("tasks")
     permission_message = _("A task can only be deleted by its author")
     permission_url = reverse_lazy("tasks")
-    extra_context = {"title": _("Delete task"), "button_text": _("Delete")}
+    extra_context = {"title": _("Delete task"), "button_text": _("Yes, delete")}

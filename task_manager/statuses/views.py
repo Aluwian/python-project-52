@@ -60,4 +60,7 @@ class DeleteStatusView(
     error_message = _("Cannot delete status because it is in use")
     error_url = reverse_lazy("statuses")
 
-    extra_context = {"title": _("Delete status"), "button_text": _("Delete")}
+    extra_context = {
+        "title": _("Delete status"),
+        "button_text": _("Yes, delete"),
+    }

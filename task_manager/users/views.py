@@ -69,4 +69,4 @@ class DeleteUserView(
     error_message = _("Cannot delete user because it is in use")
     error_url = reverse_lazy("users")
 
-    extra_context = {"title": _("Delete user"), "button_text": _("Delete")}
+    extra_context = {"title": _("Delete user"), "button_text": _("Yes, delete")}

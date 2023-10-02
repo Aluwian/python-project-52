@@ -57,4 +57,7 @@ class DeleteLabelView(
     success_url = reverse_lazy("labels")
     error_message = _("Cannot delete label because it is in use")
     error_url = reverse_lazy("labels")
-    extra_context = {"title": _("Delete label"), "button_text": _("Delete")}
+    extra_context = {
+        "title": _("Delete label"),
+        "button_text": _("Yes, delete"),
+    }

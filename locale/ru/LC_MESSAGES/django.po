@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-02 10:01+0300\n"
+"POT-Creation-Date: 2023-10-02 10:55+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,14 +74,8 @@ msgid "Delete label"
 msgstr "Удалить метку"
 
 #: task_manager/labels/views.py:60 task_manager/statuses/views.py:63
-#: task_manager/tasks/views.py:79
-#: task_manager/templates/labels/label_list.html:36
-#: task_manager/templates/statuses/statuses_list.html:37
-#: task_manager/templates/tasks/task_view.html:47
-#: task_manager/templates/tasks/tasks_list.html:54
-#: task_manager/templates/users/users_list.html:33
-#: task_manager/users/views.py:72
-msgid "Delete"
+#: task_manager/tasks/views.py:79 task_manager/users/views.py:72
+msgid "Yes, delete"
 msgstr "Да, удалить"
 
 #: task_manager/my_mixins.py:18
@@ -227,6 +221,14 @@ msgstr "Вы уверены, что хотите удалить "
 #: task_manager/templates/users/users_list.html:15
 msgid "ID"
 msgstr "ID"
+
+#: task_manager/templates/labels/label_list.html:36
+#: task_manager/templates/statuses/statuses_list.html:37
+#: task_manager/templates/tasks/task_view.html:47
+#: task_manager/templates/tasks/tasks_list.html:54
+#: task_manager/templates/users/users_list.html:33
+msgid "Delete"
+msgstr "Удалить"
 
 #: task_manager/templates/layout/base.html:13
 msgid "Task manager Hexlet"
