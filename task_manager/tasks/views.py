@@ -28,9 +28,6 @@ class TasksListView(CustomLoginRequiresMixin, FilterView, ListView):
         "button_text": _("Show"),
     }
 
-    def get_queryset(self):
-        return Task.objects.order_by("pk")
-
 
 class TaskView(CustomLoginRequiresMixin, DetailView):
     template_name = "tasks/task_view.html"
@@ -41,10 +38,9 @@ class TaskView(CustomLoginRequiresMixin, DetailView):
 class CreateTaskView(CustomLoginRequiresMixin, SuccessMessageMixin, CreateView):
     model = Task
     form_class = CreateTaskForm
-    template_name = "layout/form.html"
+    template_name = "tasks/create.html"
     success_message = _("Task successfully created")
     success_url = reverse_lazy("tasks")
-    extra_context = {"title": _("Create task"), "button_text": _("Create")}
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -58,10 +54,9 @@ class UpdateTaskView(
 ):
     model = Task
     form_class = CreateTaskForm
-    template_name = "layout/form.html"
+    template_name = "tasks/update.html"
     success_message = _("Task successfully updated")
     success_url = reverse_lazy("tasks")
-    extra_context = {"title": _("Update task"), "button_text": _("Update")}
 
 
 class DeleteTaskView(
@@ -76,4 +71,3 @@ class DeleteTaskView(
     success_url = reverse_lazy("tasks")
     permission_message = _("A task can only be deleted by its author")
     permission_url = reverse_lazy("tasks")
-    extra_context = {"title": _("Delete task"), "button_text": _("Yes, delete")}

@@ -21,17 +21,13 @@ class UsersListView(ListView):
     model = User
     context_object_name = "users"
 
-    def get_queryset(self):
-        return User.objects.order_by("pk")
-
 
 class CreateUserView(SuccessMessageMixin, CreateView):
     model = User
     form_class = CreateUserForm
-    template_name = "layout/form.html"
+    template_name = "users/create.html"
     success_message = _("User successfully registered")
     success_url = reverse_lazy("login")
-    extra_context = {"title": _("Registration"), "button_text": _("Registrate")}
 
 
 class UpdateUserView(
@@ -42,12 +38,11 @@ class UpdateUserView(
 ):
     model = User
     form_class = UpdateUserForm
-    template_name = "layout/form.html"
+    template_name = "users/update.html"
     success_url = reverse_lazy("users")
     success_message = _("User updated successfully")
     permission_message = _("You do not have rights to change another user.")
     permission_url = "users"
-    extra_context = {"title": _("User change"), "button_text": _("Update")}
 
 
 class DeleteUserView(

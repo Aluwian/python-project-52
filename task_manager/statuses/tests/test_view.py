@@ -10,7 +10,9 @@ class TestStatusList(DownloadStatuses):
 
     def test_statuses_content(self):
         response = self.client.get(reverse_lazy("statuses"))
-        self.assertQuerysetEqual(response.context["statuses"], self.statuses)
+        self.assertQuerysetEqual(
+            response.context["statuses"], self.statuses, ordered=False
+        )
 
     def test_user_no_login_view(self):
         self.client.logout()

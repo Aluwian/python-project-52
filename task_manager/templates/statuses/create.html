@@ -1,0 +1,12 @@
+<!-- task-manager/templates/statuses/create.html -->
+
+{% extends "layout/form.html" %} 
+{% load i18n %}
+{% load django_bootstrap5 %}
+
+{% block title %}
+    <h1 class="my-4">{% trans "Create status" %}</h1>
+{% endblock title %}
+{% block button %}
+<button class="btn btn-primary" type="submit">{% trans "Create" %}</button>
+{% endblock button %}

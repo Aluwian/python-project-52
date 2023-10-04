@@ -1,14 +1,12 @@
 <!-- task-manager/templates/statuses/delete.html -->
 
-{% extends "layout/base.html" %}
+{% extends "layout/delete.html" %}
 {% load i18n %}
 {% load django_bootstrap5 %}
 
-{% block main %}
-    <h1 class="my-4">{% trans title %}</h1>
-    <form method="post">
-    {% csrf_token %}
-    <p class="lead">{% trans "Are you sure you want to delete "%}{{ status.name }}?</p>
-    {% bootstrap_button button_text button_type="submit" button_class="btn-danger"%}
-    </form>
-{% endblock main %}
+{% block title %}
+    <h1 class="my-4">{% trans "Delete status" %}</h1>
+{% endblock title %}
+{% block button %}
+<button class="btn btn-primary" type="submit">{% trans "Yes, delete" %}</button>
+{% endblock button %}

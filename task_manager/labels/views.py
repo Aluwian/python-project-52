@@ -19,19 +19,15 @@ class LabelListView(CustomLoginRequiresMixin, ListView):
     model = Label
     context_object_name = "labels"
 
-    def get_queryset(self):
-        return Label.objects.order_by("pk")
-
 
 class CreateLabelView(
     CustomLoginRequiresMixin, SuccessMessageMixin, CreateView
 ):
     model = Label
     form_class = CreateLabelForm
-    template_name = "layout/form.html"
+    template_name = "labels/create.html"
     success_message = _("Label successfully created")
     success_url = reverse_lazy("labels")
-    extra_context = {"title": _("Create label"), "button_text": _("Create")}
 
 
 class UpdateLabelView(
@@ -39,10 +35,9 @@ class UpdateLabelView(
 ):
     model = Label
     form_class = CreateLabelForm
-    template_name = "layout/form.html"
+    template_name = "labels/update.html"
     success_message = _("Label successfully updated")
     success_url = reverse_lazy("labels")
-    extra_context = {"title": _("Update label"), "button_text": _("Update")}
 
 
 class DeleteLabelView(
@@ -57,7 +52,3 @@ class DeleteLabelView(
     success_url = reverse_lazy("labels")
     error_message = _("Cannot delete label because it is in use")
     error_url = reverse_lazy("labels")
-    extra_context = {
-        "title": _("Delete label"),
-        "button_text": _("Yes, delete"),
-    }

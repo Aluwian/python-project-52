@@ -10,7 +10,9 @@ class TestTasksList(DownloadTasks):
 
     def test_tasks_content(self):
         response = self.client.get(reverse_lazy("tasks"))
-        self.assertQuerySetEqual(response.context["tasks"], self.tasks)
+        self.assertQuerySetEqual(
+            response.context["tasks"], self.tasks, ordered=False
+        )
 
     def test_user_no_login_view(self):
         self.client.logout()

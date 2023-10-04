@@ -150,6 +150,8 @@ LOCALE_PATHS = [os.path.join(BASE_DIR, "locale")]
 
 STATIC_URL = "static/"
 LOGIN_URL = "login"
+LOGIN_REDIRECT_URL = "home"
+LOGOUT_REDIRECT_URL = "home"
 
 FIXTURE_DIRS = ("task_manager/fixtures/",)
 

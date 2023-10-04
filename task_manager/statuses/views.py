@@ -19,19 +19,15 @@ class StatusListView(CustomLoginRequiresMixin, ListView):
     model = Status
     context_object_name = "statuses"
 
-    def get_queryset(self):
-        return Status.objects.order_by("pk")
-
 
 class CreateStatusView(
     CustomLoginRequiresMixin, SuccessMessageMixin, CreateView
 ):
     model = Status
     form_class = CreateStatusForm
-    template_name = "layout/form.html"
+    template_name = "statuses/create.html"
     success_message = _("Status successfully created")
     success_url = reverse_lazy("statuses")
-    extra_context = {"title": _("Create status"), "button_text": _("Create")}
 
 
 class UpdateStatusView(
@@ -39,10 +35,9 @@ class UpdateStatusView(
 ):
     model = Status
     form_class = CreateStatusForm
-    template_name = "layout/form.html"
+    template_name = "statuses/update.html"
     success_message = _("Status successfully updated")
     success_url = reverse_lazy("statuses")
-    extra_context = {"title": _("Update status"), "button_text": _("Update")}
 
 
 class DeleteStatusView(
@@ -59,8 +54,3 @@ class DeleteStatusView(
 
     error_message = _("Cannot delete status because it is in use")
     error_url = reverse_lazy("statuses")
-
-    extra_context = {
-        "title": _("Delete status"),
-        "button_text": _("Yes, delete"),
-    }

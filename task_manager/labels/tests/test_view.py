@@ -10,7 +10,9 @@ class TestLabelsLict(DownloadLabels):
 
     def test_labels_content(self):
         response = self.client.get(reverse_lazy("labels"))
-        self.assertQuerysetEqual(response.context["labels"], self.labels)
+        self.assertQuerysetEqual(
+            response.context["labels"], self.labels, ordered=False
+        )
 
     def test_user_no_login_view(self):
         self.client.logout()

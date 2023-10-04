@@ -11,7 +11,9 @@ class TestUserList(DownloadUsers):
 
     def test_users_content(self):
         response = self.client.get(reverse_lazy("users"))
-        self.assertQuerysetEqual(response.context["users"], self.users)
+        self.assertQuerysetEqual(
+            response.context["users"], self.users, ordered=False
+        )
 
 
 class TestCreateUser(DownloadUsers):
