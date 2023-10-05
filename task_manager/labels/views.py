@@ -17,7 +17,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 class LabelListView(CustomLoginRequiresMixin, ListView):
     template_name = "labels/label_list.html"
     model = Label
-    context_object_name = "labels"
+    ordering = "pk"
 
 
 class CreateLabelView(

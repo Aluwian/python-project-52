@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-04 14:05+0300\n"
+"POT-Creation-Date: 2023-10-04 14:12+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -119,6 +119,7 @@ msgid "Labels"
 msgstr "Метки"
 
 #: task_manager/tasks/views.py:28
+#: task_manager/templates/tasks/tasks_list.html:23
 msgid "Show"
 msgstr "Показать"
 
@@ -243,6 +244,14 @@ msgstr "Вход"
 msgid "Registration"
 msgstr "Регистрация"
 
+#: task_manager/templates/login.html:8
+msgid "Log in"
+msgstr "Вход"
+
+#: task_manager/templates/login.html:11
+msgid "Enter"
+msgstr "Войти"
+
 #: task_manager/templates/statuses/create.html:8
 #: task_manager/templates/statuses/statuses_list.html:16
 msgid "Create status"
@@ -329,17 +338,6 @@ msgstr "Невозможно удалить пользователя, так к�
 msgid "You are logged in"
 msgstr "Вы залогинены"
 
-#: task_manager/views.py:15
-msgid "Log in"
-msgstr "Вход"
-
-#: task_manager/views.py:15
-msgid "Enter"
-msgstr "Войти"
-
-#: task_manager/views.py:21
+#: task_manager/views.py:20
 msgid "You are logged out"
 msgstr "Вы разлогинены"
-
-#~ msgid "Task"
-#~ msgstr "Задача"

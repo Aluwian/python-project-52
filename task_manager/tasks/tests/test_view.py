@@ -11,7 +11,7 @@ class TestTasksList(DownloadTasks):
     def test_tasks_content(self):
         response = self.client.get(reverse_lazy("tasks"))
         self.assertQuerySetEqual(
-            response.context["tasks"], self.tasks, ordered=False
+            response.context["object_list"], self.tasks, ordered=False
         )
 
     def test_user_no_login_view(self):
@@ -35,14 +35,14 @@ class TestFilterTask(DownloadTasks):
         response = self.client.get(
             reverse_lazy("tasks"), {"status": self.status1.pk}
         )
-        self.assertEqual(response.context["tasks"].count(), 1)
+        self.assertEqual(response.context["object_list"].count(), 1)
         self.assertContains(response, self.task_2.name)
 
     def test_task_by_executor(self):
         response = self.client.get(
             reverse_lazy("tasks"), {"executor": self.user2.pk}
         )
-        self.assertEqual(response.context["tasks"].count(), 2)
+        self.assertEqual(response.context["object_list"].count(), 2)
         self.assertContains(response, self.task_1.name)
         self.assertContains(response, self.task_2.name)
 
@@ -50,7 +50,7 @@ class TestFilterTask(DownloadTasks):
         response = self.client.get(
             reverse_lazy("tasks"), {"author_task": self.user1.pk}
         )
-        self.assertEqual(response.context["tasks"].count(), 1)
+        self.assertEqual(response.context["object_list"].count(), 1)
 
 
 class TestTaskView(DownloadTasks):

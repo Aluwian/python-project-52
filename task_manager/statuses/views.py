@@ -17,7 +17,7 @@ from ..my_mixins import CustomLoginRequiresMixin, ProtectedDeleteMixin
 class StatusListView(CustomLoginRequiresMixin, ListView):
     template_name = "statuses/statuses_list.html"
     model = Status
-    context_object_name = "statuses"
+    ordering = "pk"
 
 
 class CreateStatusView(
@@ -27,7 +27,6 @@ class CreateStatusView(
     form_class = CreateStatusForm
     template_name = "statuses/create.html"
     success_message = _("Status successfully created")
-    success_url = reverse_lazy("statuses")
 
 
 class UpdateStatusView(
@@ -37,7 +36,6 @@ class UpdateStatusView(
     form_class = CreateStatusForm
     template_name = "statuses/update.html"
     success_message = _("Status successfully updated")
-    success_url = reverse_lazy("statuses")
 
 
 class DeleteStatusView(

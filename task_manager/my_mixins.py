@@ -10,13 +10,11 @@ from django.utils.translation import gettext_lazy as _
 
 
 class CustomLoginRequiresMixin(LoginRequiredMixin):
+    permission_denied_message = _("You are not authorized! Please sign in.")
+
     def dispatch(self, request, *args, **kwargs):
         if not request.user.is_authenticated:
-            messages.add_message(
-                request,
-                messages.ERROR,
-                _("You are not authorized! Please sign in."),
-            )
+            messages.error(self.request, self.permission_denied_message)
             return redirect(reverse_lazy("login"))
         return super().dispatch(request, *args, **kwargs)
 

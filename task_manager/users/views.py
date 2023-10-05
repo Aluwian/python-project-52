@@ -19,7 +19,7 @@ from django.utils.translation import gettext_lazy as _
 class UsersListView(ListView):
     template_name = "users/users_list.html"
     model = User
-    context_object_name = "users"
+    ordering = "pk"
 
 
 class CreateUserView(SuccessMessageMixin, CreateView):

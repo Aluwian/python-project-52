@@ -23,7 +23,7 @@ class TasksListView(CustomLoginRequiresMixin, FilterView, ListView):
     template_name = "tasks/tasks_list.html"
     model = Task
     filterset_class = FilterTasks
-    context_object_name = "tasks"
+    ordering = "pk"
     extra_context = {
         "button_text": _("Show"),
     }
